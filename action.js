@@ -19,31 +19,28 @@ let days = [
 ];
 let day = days[now.getDay()];
 showDay.innerHTML = `${day} ${hours}:${minutes}`;
-//
-function showCity(event) {
+
+function search(event) {
   event.preventDefault();
-  let newInput = document.querySelector("#city");
-  let answer = document.querySelector("#answer");
-  newInput.innerHTML = answer.value;
+  let cityElement = document.querySelector("#city");
+  let cityInput = document.querySelector("#answer");
+  cityElement.innerHTML = cityInput.value;
+  searchCity(cityInput.value);
 }
-let form = document.querySelector("#searching");
-form.addEventListener("submit", showCity);
-
-//
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+function displayWeather(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+function searchCity(city) {
+  let key = "02b99a7efa44729756b3eefe7f2f7c7b";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+  axios.get(url).then(displayWeather);
 }
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+let searchForm = document.querySelector("#searching");
+searchForm.addEventListener("submit", search);

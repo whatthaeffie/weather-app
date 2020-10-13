@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/2367b30e31.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" style="width: 30rem">
+            <div class="card-body">
+                <form class=" search-form" id="searching">
+                    <input type="search" placeholder="Type in a City..." autofocus="on" id="answer" />
+                    <input type="submit" value="Enter" />
+                </form>
+                <br>
+                <h1 id="city">Los Angeles, CA</h1>
+                <h2><i class="fas fa-cloud-sun">
+                    </i><span class="temperature" id="temperature">19</span><span class="units">
+                        <a href="#" id="celsius-link">°C</a> |
+                        <a href="#" id="fahrenheit-link">°F</a>
+                    </span>
+                    <small id="date"></small></h2>
+
+                <div class="card-group">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Precipitation: 0% </h6>
+                            <br>
+                            <h6 class="humid">Humidity: 51% </h6>
+                            <br>
+                            <h6 class="wind">Wind: 0mph</h6>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="media my-2">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-cloud-sun"></i> Sun</h5>
+                                        87° / 65°
+                                    </div>
+                                </li>
+                                <li class="media my-2">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-sun"></i> Mon</h5>
+                                        87° / 65°
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-sun"></i> Tues</h5>
+                                        88° / 65°
+                                    </div>
+                                </li>
+
+                                <li class="media my-2">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-sun"></i> Wed</h5>
+                                        89° / 65°
+                                    </div>
+                                </li>
+
+                                <li class="media my-2">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-sun"></i> Thurs</h5>
+                                        88° / 67°
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-cloud-sun"></i> Fri</h5>
+                                        86° / 64°
+                                    </div>
+                                </li>
+
+                                <li class="media my-2">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><i class="fas fa-sun"></i> Sat</h5>
+                                        84° / 63°
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="action.js"></script>
+</body>
+
+</html>
